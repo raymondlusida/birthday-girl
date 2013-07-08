@@ -1,0 +1,49 @@
+package com.raymondlusida.birthdaygirl.model;
+
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
+
+public class Girl {
+
+	public enum Direction {
+		UP, DOWN, LEFT, RIGHT
+	}
+	
+	public static final float HEIGHT = 2f;
+	public static final float WIDTH = 2f;
+	
+	private Vector2 position;
+	private Rectangle bounds;
+	private Direction direction;
+	
+	public Girl(Vector2 position) {
+		this.position = position;
+		this.bounds = new Rectangle();
+		this.bounds.height = HEIGHT;
+		this.bounds.width = WIDTH;
+		this.direction = Direction.DOWN;
+	}
+
+	public void goTo(Vector2 goalPosition) {
+		
+	}
+	
+	private void setDirection(Direction newDirection) {
+		this.direction = newDirection;
+	}
+	
+	/** GETTERS AND SETTERS **/
+	
+	public Direction getDirection() {
+		return direction;
+	}
+	
+	public Vector2 getPosition() {
+		return position;
+	}
+	
+	public Rectangle getBounds() {
+		return bounds;
+	}
+	
+}

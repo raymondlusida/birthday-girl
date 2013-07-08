@@ -1,0 +1,11 @@
+package com.raymondlusida.birthdaygirl.model;
+
+public class Girl {
+
+	public enum Direction {
+		UP, DOWN, LEFT, RIGHT
+	}
+	
+	
+	
+}

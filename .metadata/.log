@@ -1,0 +1,444 @@
+!SESSION 2013-07-07 16:25:26.319 -----------------------------------------------
+eclipse.buildId=I20120531-1500
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -data C:\Users\Raymond\Workspace\Libgdx -product org.eclipse.epp.package.rcp.product
+
+!ENTRY org.eclipse.jface 2 0 2013-07-07 16:25:35.397
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 16:25:35.397
+!MESSAGE A conflict occurred for ALT+SHIFT+X P:
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(org.eclipse.pde.ui.junitWorkbenchShortcut.run,Run JUnit Plug-in Test,
+		Run JUnit Plug-in Test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1af7c70,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(net.sf.simpletest.eclipse.puShortcut.run,Run PHPUnit2,
+		Run PHPUnit2,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@12b792,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 16:25:35.397
+!MESSAGE A conflict occurred for ALT+CTRL+R:
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.CompareWithRevisionCommand,URL...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@d1f62e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.python.pydev.debug.setnext,Set Next Statement,
+		,
+		Category(org.python.pydev.ui.category.run,PyDev - Run,Python run category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@7982f3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2013-07-07 16:49:56.913
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at file:/C:/Users/Raymond/Desktop/simpletest/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:675)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2013-07-07 16:49:56.963
+!MESSAGE No repository found at file:/C:/Users/Raymond/Desktop/simpletest/.
+!SESSION 2013-07-07 16:52:24.058 -----------------------------------------------
+eclipse.buildId=I20120531-1500
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -data C:\Users\Raymond\Workspace\Libgdx -product org.eclipse.epp.package.rcp.product
+
+!ENTRY org.eclipse.jface 2 0 2013-07-07 16:52:50.488
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 16:52:50.488
+!MESSAGE A conflict occurred for ALT+SHIFT+X P:
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(org.eclipse.pde.ui.junitWorkbenchShortcut.run,Run JUnit Plug-in Test,
+		Run JUnit Plug-in Test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1228455,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(net.sf.simpletest.eclipse.puShortcut.run,Run PHPUnit2,
+		Run PHPUnit2,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@11e01a6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 16:52:50.488
+!MESSAGE A conflict occurred for ALT+CTRL+R:
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.CompareWithRevisionCommand,URL...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@fe62e5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.python.pydev.debug.setnext,Set Next Statement,
+		,
+		Category(org.python.pydev.ui.category.run,PyDev - Run,Python run category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@10eacff,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2013-07-07 16:57:49.403
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at file:/C:/Users/Raymond/Desktop/simpletest/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:675)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2013-07-07 16:57:49.405
+!MESSAGE No repository found at file:/C:/Users/Raymond/Desktop/simpletest/.
+!SESSION 2013-07-07 17:13:15.639 -----------------------------------------------
+eclipse.buildId=I20120531-1500
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -data C:\Users\Raymond\Workspace\Libgdx -product org.eclipse.epp.package.rcp.product
+
+!ENTRY org.eclipse.jface 2 0 2013-07-07 17:13:30.348
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 17:13:30.348
+!MESSAGE A conflict occurred for ALT+SHIFT+X P:
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(org.eclipse.pde.ui.junitWorkbenchShortcut.run,Run JUnit Plug-in Test,
+		Run JUnit Plug-in Test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@19852b0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(net.sf.simpletest.eclipse.puShortcut.run,Run PHPUnit2,
+		Run PHPUnit2,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@15ce034,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 17:13:30.348
+!MESSAGE A conflict occurred for ALT+CTRL+R:
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.CompareWithRevisionCommand,URL...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@839d9a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.python.pydev.debug.setnext,Set Next Statement,
+		,
+		Category(org.python.pydev.ui.category.run,PyDev - Run,Python run category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@dfefe1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2013-07-07 17:16:07.954
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at file:/C:/Users/Raymond/Desktop/simpletest/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:675)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2013-07-07 17:16:07.991
+!MESSAGE No repository found at file:/C:/Users/Raymond/Desktop/simpletest/.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-07-07 17:17:01.643
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-07-07 17:17:01.643
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:17:01.643
+!MESSAGE Software being installed: Google Plugin for Eclipse 3.7 3.2.4.v201306061638-rel-r37 (com.google.gdt.eclipse.suite.e37.feature.feature.group 3.2.4.v201306061638-rel-r37)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:17:01.643
+!MESSAGE Missing requirement: Google Plugin for Eclipse 3.7 3.2.4.v201306061638-rel-r37 (com.google.gdt.eclipse.suite.e37.feature.feature.group 3.2.4.v201306061638-rel-r37) requires 'org.eclipse.platform.feature.group [3.7.0,3.8.0)' but it could not be found
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-07-07 17:17:01.653
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-07-07 17:17:01.653
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:17:01.653
+!MESSAGE Software being installed: Google Plugin for Eclipse 3.7 3.2.4.v201306061638-rel-r37 (com.google.gdt.eclipse.suite.e37.feature.feature.group 3.2.4.v201306061638-rel-r37)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:17:01.653
+!MESSAGE Missing requirement: Google Plugin for Eclipse 3.7 3.2.4.v201306061638-rel-r37 (com.google.gdt.eclipse.suite.e37.feature.feature.group 3.2.4.v201306061638-rel-r37) requires 'org.eclipse.platform.feature.group [3.7.0,3.8.0)' but it could not be found
+!SESSION 2013-07-07 17:17:29.530 -----------------------------------------------
+eclipse.buildId=I20120531-1500
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.rcp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.rcp.product
+
+!ENTRY org.eclipse.jface 2 0 2013-07-07 17:17:35.822
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 17:17:35.822
+!MESSAGE A conflict occurred for ALT+SHIFT+X P:
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(org.eclipse.pde.ui.junitWorkbenchShortcut.run,Run JUnit Plug-in Test,
+		Run JUnit Plug-in Test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@6ac250,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(net.sf.simpletest.eclipse.puShortcut.run,Run PHPUnit2,
+		Run PHPUnit2,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@fb3026,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 17:17:35.822
+!MESSAGE A conflict occurred for ALT+CTRL+R:
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.CompareWithRevisionCommand,URL...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@b98e8e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.python.pydev.debug.setnext,Set Next Statement,
+		,
+		Category(org.python.pydev.ui.category.run,PyDev - Run,Python run category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@175d7f3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2013-07-07 17:18:12.606
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at file:/C:/Users/Raymond/Desktop/simpletest/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:675)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2013-07-07 17:18:12.607
+!MESSAGE No repository found at file:/C:/Users/Raymond/Desktop/simpletest/.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-07-07 17:18:31.817
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-07-07 17:18:31.818
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:18:31.818
+!MESSAGE Software being installed: Google Plugin for Eclipse 3.7 3.2.4.v201306061638-rel-r37 (com.google.gdt.eclipse.suite.e37.feature.feature.group 3.2.4.v201306061638-rel-r37)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:18:31.818
+!MESSAGE Missing requirement: Google Eclipse 3.7 Platform Plugin 3.2.4.v201306061638-rel-r37 (com.google.gdt.eclipse.platform.e37 3.2.4.v201306061638-rel-r37) requires 'bundle org.mortbay.jetty.server 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-07-07 17:18:31.818
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:18:31.818
+!MESSAGE From: Google Plugin for Eclipse 3.7 3.2.4.v201306061638-rel-r37 (com.google.gdt.eclipse.suite.e37.feature.feature.group 3.2.4.v201306061638-rel-r37)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:18:31.818
+!MESSAGE To: com.google.gdt.eclipse.platform.e37 [3.2.4.v201306061638-rel-r37]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-07-07 17:18:31.827
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-07-07 17:18:31.827
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:18:31.827
+!MESSAGE Software being installed: Google Plugin for Eclipse 3.7 3.2.4.v201306061638-rel-r37 (com.google.gdt.eclipse.suite.e37.feature.feature.group 3.2.4.v201306061638-rel-r37)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:18:31.827
+!MESSAGE Missing requirement: Google Eclipse 3.7 Platform Plugin 3.2.4.v201306061638-rel-r37 (com.google.gdt.eclipse.platform.e37 3.2.4.v201306061638-rel-r37) requires 'bundle org.mortbay.jetty.server 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-07-07 17:18:31.827
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:18:31.827
+!MESSAGE From: Google Plugin for Eclipse 3.7 3.2.4.v201306061638-rel-r37 (com.google.gdt.eclipse.suite.e37.feature.feature.group 3.2.4.v201306061638-rel-r37)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-07-07 17:18:31.827
+!MESSAGE To: com.google.gdt.eclipse.platform.e37 [3.2.4.v201306061638-rel-r37]
+
+!ENTRY org.eclipse.equinox.p2.operations 2 0 2013-07-07 17:20:02.691
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10001 2013-07-07 17:20:02.692
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10005 2013-07-07 17:20:02.692
+!MESSAGE "Google Web Toolkit SDK 2.5.1" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 2 0 2013-07-07 17:20:02.694
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10001 2013-07-07 17:20:02.694
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 10005 2013-07-07 17:20:02.694
+!MESSAGE "Google Web Toolkit SDK 2.5.1" will be ignored because it is already installed.
+!SESSION 2013-07-07 17:21:50.582 -----------------------------------------------
+eclipse.buildId=I20120531-1500
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.rcp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.rcp.product
+
+!ENTRY org.eclipse.jface 2 0 2013-07-07 17:22:09.740
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 17:22:09.740
+!MESSAGE A conflict occurred for ALT+SHIFT+X P:
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(net.sf.simpletest.eclipse.puShortcut.run,Run PHPUnit2,
+		Run PHPUnit2,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@112a9c7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(org.eclipse.pde.ui.junitWorkbenchShortcut.run,Run JUnit Plug-in Test,
+		Run JUnit Plug-in Test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@486309,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 17:22:09.740
+!MESSAGE A conflict occurred for ALT+CTRL+R:
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.CompareWithRevisionCommand,URL...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@5e1334,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.python.pydev.debug.setnext,Set Next Statement,
+		,
+		Category(org.python.pydev.ui.category.run,PyDev - Run,Python run category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@3ec55e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.google.gdt.eclipse.suite 1 0 2013-07-07 17:22:16.193
+!MESSAGE Registering: com.google.gwt.eclipse.sdkbundle_2.5.1
+
+!ENTRY com.google.gdt.eclipse.core 1 0 2013-07-07 17:22:30.366
+!MESSAGE Scheduled rebuild of project birthday-girl-html because of plugin update (current version: 3.2.4.v201306061638-rel-r42)
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2013-07-07 17:24:24.146
+!MESSAGE No valid Android XML Editor Delegate found for file /birthday-girl/src/BirthdayGirl.gwt.xml [Res null, type null]
+!SESSION 2013-07-07 22:40:45.884 -----------------------------------------------
+eclipse.buildId=I20120531-1500
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.rcp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.rcp.product
+
+!ENTRY org.eclipse.jface 2 0 2013-07-07 22:41:00.296
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 22:41:00.296
+!MESSAGE A conflict occurred for ALT+SHIFT+X P:
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(net.sf.simpletest.eclipse.puShortcut.run,Run PHPUnit2,
+		Run PHPUnit2,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@17d1bed,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X P,
+	ParameterizedCommand(Command(org.eclipse.pde.ui.junitWorkbenchShortcut.run,Run JUnit Plug-in Test,
+		Run JUnit Plug-in Test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@18517d2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-07 22:41:00.296
+!MESSAGE A conflict occurred for ALT+CTRL+R:
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.CompareWithRevisionCommand,URL...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@8dd142,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.python.pydev.debug.setnext,Set Next Statement,
+		,
+		Category(org.python.pydev.ui.category.run,PyDev - Run,Python run category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1fd6fd6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2013-07-07 22:45:39.586
+!MESSAGE Failed to open search index.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2013-07-07 22:45:40.462
+!MESSAGE 'remote-models (http://download.eclipse.org/recommenders/models/juno-2012-05-15/, releases+snapshots)' did not send ETAG header for 'org.eclipse.recommenders:index:pom:0.0.0'.
+
+!ENTRY org.eclise.recommenders.rcp.utils 4 0 2013-07-07 22:57:27.239
+!MESSAGE Failed to resolve selection in '=birthday-girl/src<com.raymondlusida.birthdaygirl{BirthdayGirl.java' at offset 1880
+!STACK 1
+Java Model Exception: Java Model Status [Index out of bounds]
+	at org.eclipse.jdt.internal.core.Openable.codeSelect(Openable.java:157)
+	at org.eclipse.jdt.internal.core.CompilationUnit.codeSelect(CompilationUnit.java:377)
+	at org.eclipse.jdt.internal.core.CompilationUnit.codeSelect(CompilationUnit.java:371)
+	at org.eclipse.recommenders.internal.rcp.providers.JavaSelectionUtils.resolveJavaElementFromTypeRootInEditor(JavaSelectionUtils.java:147)
+	at org.eclipse.recommenders.internal.rcp.providers.JavaSelectionUtils.resolveJavaElementFromEditor(JavaSelectionUtils.java:129)
+	at org.eclipse.recommenders.internal.rcp.providers.JavaSelectionUtils.resolveJavaElementFromEditor(JavaSelectionUtils.java:112)
+	at org.eclipse.recommenders.internal.rcp.providers.JavaSelectionProvider.handleSelectionInEditor(JavaSelectionProvider.java:108)
+	at org.eclipse.recommenders.internal.rcp.providers.JavaSelectionProvider.access$1(JavaSelectionProvider.java:105)
+	at org.eclipse.recommenders.internal.rcp.providers.JavaSelectionProvider$1.run(JavaSelectionProvider.java:82)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 1 org.eclipse.jdt.core 4 980 2013-07-07 22:57:27.241
+!MESSAGE Index out of bounds
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2013-07-07 23:44:17.670
+!MESSAGE com.android.ide.eclipse.adt

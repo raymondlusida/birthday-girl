@@ -1,0 +1,25 @@
+package com.raymondlusida.birthdaygirl.controller;
+
+import com.raymondlusida.birthdaygirl.model.Girl;
+import com.raymondlusida.birthdaygirl.model.Room;
+
+public class RoomController {
+
+	private Room room;
+	private Girl girl;
+	
+	private float accumulatedDelta;
+	
+	public RoomController(Room room) {
+		this.room = room;
+		this.girl = room.getGirl();
+		this.accumulatedDelta = 0;
+	}
+	
+	public void update(float delta) {
+		accumulatedDelta += delta;
+		if(accumulatedDelta >= 2) {
+			
+		}
+	}
+}
