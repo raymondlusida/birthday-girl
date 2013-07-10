@@ -17,7 +17,9 @@
 <fullyQualifiedTypeName name="com.badlogic.gdx.math.Rectangle"/>
 <fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.Room"/>
 <fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.Girl"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector2"/>
 <fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.controller.RoomController"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.Sprite"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.Girl.Direction"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.InputProcessor"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector2"/>
 </qualifiedTypeNameHistroy>

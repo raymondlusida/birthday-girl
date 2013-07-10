@@ -26,17 +26,17 @@
     "javaRuntime": false
   },
   {
-    "symbolicName": "jre",
+    "symbolicName": "android",
     "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
       "qualifier": ""
     },
-    "jarFileFingerprint": "f22e40e1858663015f868bf72e2795710fa5e2bd",
-    "jarFileModificationDate": "2012-12-20T21:35:28.298-08:00",
-    "location": "C:\\Program Files\\Java\\jre7\\lib\\ext\\access-bridge.jar",
-    "javaRuntime": true
+    "jarFileFingerprint": "92822ec981a4d0a7f002c792e7b3b60f9a1f26fa",
+    "jarFileModificationDate": "2012-11-21T00:26:04-08:00",
+    "location": "C:\\Users\\Raymond\\Desktop\\Android Eclipse\\sdk\\platforms\\android-15\\android.jar",
+    "javaRuntime": false
   },
   {
     "symbolicName": "jre",
@@ -52,17 +52,17 @@
     "javaRuntime": true
   },
   {
-    "symbolicName": "android",
+    "symbolicName": "jre",
     "version": {
-      "major": -1,
-      "minor": -1,
-      "micro": -1,
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "92822ec981a4d0a7f002c792e7b3b60f9a1f26fa",
-    "jarFileModificationDate": "2012-11-21T00:26:04-08:00",
-    "location": "C:\\Users\\Raymond\\Desktop\\Android Eclipse\\sdk\\platforms\\android-15\\android.jar",
-    "javaRuntime": false
+    "jarFileFingerprint": "f22e40e1858663015f868bf72e2795710fa5e2bd",
+    "jarFileModificationDate": "2012-12-20T21:35:28.298-08:00",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\ext\\access-bridge.jar",
+    "javaRuntime": true
   },
   {
     "symbolicName": "jre",
@@ -306,9 +306,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "6384a81595ad7a44db93fa72d8806a37ed4aa509",
-    "jarFileModificationDate": "2012-12-20T21:35:43.010-08:00",
-    "location": "C:\\Program Files\\Java\\jre7\\lib\\charsets.jar",
+    "jarFileFingerprint": "a3d1a9689f1c8e36ab64fb669df92076771c42f2",
+    "jarFileModificationDate": "2012-12-20T21:35:28.642-08:00",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\ext\\sunmscapi.jar",
     "javaRuntime": true
   },
   {
@@ -319,9 +319,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "a3d1a9689f1c8e36ab64fb669df92076771c42f2",
-    "jarFileModificationDate": "2012-12-20T21:35:28.642-08:00",
-    "location": "C:\\Program Files\\Java\\jre7\\lib\\ext\\sunmscapi.jar",
+    "jarFileFingerprint": "6384a81595ad7a44db93fa72d8806a37ed4aa509",
+    "jarFileModificationDate": "2012-12-20T21:35:43.010-08:00",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\charsets.jar",
     "javaRuntime": true
   },
   {

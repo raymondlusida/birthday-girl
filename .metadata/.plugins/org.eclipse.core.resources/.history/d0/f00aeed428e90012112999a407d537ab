@@ -1,0 +1,22 @@
+package com.raymondlusida.birthdaygirl.model;
+
+import com.badlogic.gdx.math.Vector2;
+
+public class Room {
+
+	public static final float ROOM_WIDTH = 9f;
+	public static final float HEIGHT = 14f;
+	
+	public static final float MENU_HEIGHT = 2f;
+	
+	private Girl girl;
+	
+	public Room() {
+		girl = new Girl(new Vector2(4f, 7f));
+	}
+	
+	public Girl getGirl() {
+		return girl;
+	}
+
+}

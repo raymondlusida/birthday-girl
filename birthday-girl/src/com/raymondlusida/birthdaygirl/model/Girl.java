@@ -9,8 +9,9 @@ public class Girl {
 		UP, DOWN, LEFT, RIGHT
 	}
 	
-	public static final float HEIGHT = 2f;
-	public static final float WIDTH = 2f;
+	public static final float HEIGHT = 3f;
+	public static final float WIDTH = 3f;
+	public static final float SPEED = 2f;
 	
 	private Vector2 position;
 	private Vector2 velocity;
@@ -26,6 +27,37 @@ public class Girl {
 		this.direction = Direction.LEFT;
 	}
 
+	public void update(float delta) {
+		position.add(velocity.cpy().mul(delta));
+	}
+	
+	public void move(Direction direction) {
+		this.direction = direction;
+		switch(direction) {
+		case DOWN:
+			velocity.x = 0;
+			velocity.y = - SPEED;
+			break;
+		case LEFT:
+			velocity.x = - SPEED;
+			velocity.y = 0;
+			break;
+		case RIGHT:
+			velocity.x = SPEED;
+			velocity.y = 0;
+			break;
+		case UP:
+			velocity.x = 0;
+			velocity.y = SPEED;
+			break;
+		}
+	}
+	
+	public void stop() {
+		velocity.x = 0;
+		velocity.y = 0;
+	}
+	
 	public void goTo(Vector2 goalPosition) {
 		float deltaX = goalPosition.x - position.x;
 		float deltaY = goalPosition.y - position.y;

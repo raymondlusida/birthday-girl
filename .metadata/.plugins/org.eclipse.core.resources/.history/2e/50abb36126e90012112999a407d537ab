@@ -1,0 +1,22 @@
+package com.raymondlusida.birthdaygirl.model;
+
+import com.badlogic.gdx.math.Vector2;
+
+public class Room {
+
+	Girl girl;
+	Vector2 size;
+	
+	public Room() {
+		girl = new Girl(new Vector2(4f, 8f));
+		size = new Vector2(9f, 16f);
+	}
+	
+	public Girl getGirl() {
+		return girl;
+	}
+	
+	public Vector2 getSize() {
+		return size;
+	}
+}

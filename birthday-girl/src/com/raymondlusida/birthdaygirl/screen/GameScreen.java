@@ -2,29 +2,34 @@ package com.raymondlusida.birthdaygirl.screen;
 
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
-import com.raymondlusida.birthdaygirl.controller.RoomController;
-import com.raymondlusida.birthdaygirl.model.Room;
-import com.raymondlusida.birthdaygirl.renderer.RoomRenderer;
+import com.badlogic.gdx.math.Vector2;
+import com.raymondlusida.birthdaygirl.controller.GirlController;
+import com.raymondlusida.birthdaygirl.model.World;
+import com.raymondlusida.birthdaygirl.renderer.WorldRenderer;
 
-public class GameScreen implements Screen {
+public class GameScreen implements Screen, InputProcessor {
 
-	private Room room;
-	private RoomRenderer renderer;
-	private RoomController controller;
+	private World world;
+	private WorldRenderer renderer;
+	private GirlController controller;
+	
+	private float ippuX;
+	private float ippuY;
 	
 	@Override
 	public void show() {
-		room = new Room();
-		renderer = new RoomRenderer(room, true);
-		renderer.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		controller = new RoomController(room);
+		world = new World();
+		renderer = new WorldRenderer(world, true);
+		controller = new GirlController(world);
+		Gdx.input.setInputProcessor(this);
 	}
 	
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0.1f, 0.1f, 0.1f, 1);
+		Gdx.gl.glClearColor(1f, 1f, 1f, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		
 		controller.update(delta);
@@ -33,7 +38,8 @@ public class GameScreen implements Screen {
 
 	@Override
 	public void resize(int width, int height) {
-		
+		ippuX = width / renderer.CAMERA_WIDTH;
+		ippuY = height / renderer.CAMERA_HEIGHT;
 	}
 
 	@Override
@@ -58,6 +64,60 @@ public class GameScreen implements Screen {
 	public void dispose() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	/** Input Processor Methods **/
+	
+	@Override
+	public boolean keyDown(int keycode) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean keyUp(int keycode) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean keyTyped(char character) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+		float x = (float)screenX / ippuX;
+		float y = World.ROOM_HEIGHT - (float)screenY / ippuY;
+		System.out.println(x + ", " + y);
+		System.out.println("Girl: " + world.getGirl().getPosition());
+		controller.setGoal(new Vector2(x, y));
+		return true;
+	}
+
+	@Override
+	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean touchDragged(int screenX, int screenY, int pointer) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean mouseMoved(int screenX, int screenY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean scrolled(int amount) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
