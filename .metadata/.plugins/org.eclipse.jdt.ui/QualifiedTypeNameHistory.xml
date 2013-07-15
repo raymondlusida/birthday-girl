@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.badlogic.gdx.Screen"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.Game"/>
-<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.screen.GameScreen"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.OrthographicCamera"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.GL10"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.glutils.ShapeRenderer"/>
@@ -11,15 +9,39 @@
 <fullyQualifiedTypeName name="java.awt.Rectangle"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Color"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Texture"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.SpriteBatch"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.Gdx"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.math.Rectangle"/>
 <fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.Room"/>
-<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.Girl"/>
 <fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.controller.RoomController"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.Sprite"/>
 <fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.Girl.Direction"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.InputProcessor"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.Girl"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.Gift"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector2"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.renderer.WorldRenderer"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.Food"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.Flower"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.Plush"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.BitmapFont"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.screen.GameScreen"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.inputprocessor.GameMainProcessor"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.physics.box2d.World"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.model.World"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.Screen"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.screen.MenuScreen"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.InputProcessor"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.BirthdayGirl"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.screen.ResultScreen"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.renderer.ResultRenderer"/>
+<fullyQualifiedTypeName name="com.raymondlusida.birthdaygirl.renderer.MenuRenderer"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Texture"/>
 </qualifiedTypeNameHistroy>

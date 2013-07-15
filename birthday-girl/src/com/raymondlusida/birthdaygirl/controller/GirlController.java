@@ -1,6 +1,6 @@
 package com.raymondlusida.birthdaygirl.controller;
 
-import com.badlogic.gdx.math.Vector2;
+import com.raymondlusida.birthdaygirl.model.Gift;
 import com.raymondlusida.birthdaygirl.model.Girl;
 import com.raymondlusida.birthdaygirl.model.Girl.Direction;
 import com.raymondlusida.birthdaygirl.model.World;
@@ -9,23 +9,25 @@ public class GirlController {
 
 	private World world;
 	private Girl girl;
-
-	private Vector2 goal;
 	
 	public GirlController(World world) {
 		this.world = world;
 		this.girl = world.getGirl();
-		this.goal = new Vector2(girl.getPosition().x, girl.getPosition().y);
 	}
 	
 	public void update(float delta) {
 		moveGirlToGoal();
-		girl.update(delta);
+		world.update(delta);
 	}
 	
-	public void moveGirlToGoal() {
-		float deltaX = goal.x - girl.getPosition().x;
-		float deltaY = goal.y - girl.getPosition().y;
+	private void moveGirlToGoal() {
+		Gift giftGoal = getNextGiftInQueue();
+		
+		if(giftGoal == null)
+			return;
+		
+		float deltaX = giftGoal.getPosition().x - girl.getPosition().x;
+		float deltaY = giftGoal.getPosition().y - girl.getPosition().y;
 		if(Math.abs(deltaX) > 0.2) {
 			if(deltaX > 0)
 				girl.move(Direction.RIGHT);
@@ -38,10 +40,24 @@ public class GirlController {
 				girl.move(Direction.DOWN);
 		} else {
 			girl.stop();
+			girl.receiveGift(giftGoal);
+			removeGift(giftGoal);
 		}
 	}
+
+	public void addGift(Gift gift) {
+		world.addGift(gift);
+		world.purchase(gift);
+	}
 	
-	public void setGoal(Vector2 goal) {
-		this.goal = goal;
+	public void removeGift(Gift gift) {
+		world.removeGift(gift);
+	}
+	
+	public Gift getNextGiftInQueue() {
+		if(world.getPlacedGifts().isEmpty())
+			return null;
+		
+		return world.getPlacedGifts().get(0);
 	}
 }

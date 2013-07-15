@@ -11,12 +11,18 @@ public class Girl {
 	
 	public static final float HEIGHT = 3f;
 	public static final float WIDTH = 3f;
-	public static final float SPEED = 2f;
+	public static final float SPEED = 4f;
+	
+	private static final int SADNESS_SPEED = 3;
+	private static final float SADNESS_INTERVAL = 0.6f;
 	
 	private Vector2 position;
 	private Vector2 velocity;
 	private Rectangle bounds;
 	private Direction direction;
+	
+	private int happiness;
+	private float accumulatedDelta;
 	
 	public Girl(Vector2 position) {
 		this.position = position;
@@ -25,10 +31,18 @@ public class Girl {
 		this.bounds.height = HEIGHT;
 		this.bounds.width = WIDTH;
 		this.direction = Direction.LEFT;
+		this.happiness = 100;
+		this.accumulatedDelta = 0;
 	}
 
 	public void update(float delta) {
 		position.add(velocity.cpy().mul(delta));
+		
+		accumulatedDelta += delta;
+		if(accumulatedDelta >= SADNESS_INTERVAL) {
+			happiness = Math.max(happiness - SADNESS_SPEED, 0);
+			accumulatedDelta = 0;
+		}
 	}
 	
 	public void move(Direction direction) {
@@ -58,29 +72,8 @@ public class Girl {
 		velocity.y = 0;
 	}
 	
-	public void goTo(Vector2 goalPosition) {
-		float deltaX = goalPosition.x - position.x;
-		float deltaY = goalPosition.y - position.y;
-		float angle = (float) (Math.atan2(deltaY, deltaX) * 180f / Math.PI);
-		if(angle < 0)
-			angle += 360;
-		System.out.println(angle);
-		setDirection(angle);
-	}
-	
-	private void setDirection(float angle) {
-		if(angle > 45 && angle < 135)
-			direction = Direction.UP;
-		else if(angle >= 135 && angle <= 225)
-			direction = Direction.LEFT;
-		else if(angle > 225 && angle < 315)
-			direction = Direction.DOWN;
-		else
-			direction = Direction.RIGHT;
-	}
-	
-	private void setDirection(Direction newDirection) {
-		this.direction = newDirection;
+	public void receiveGift(Gift gift) {
+		happiness = Math.min(happiness + gift.getValue(), 100);
 	}
 	
 	/** GETTERS AND SETTERS **/
@@ -95,6 +88,10 @@ public class Girl {
 	
 	public Rectangle getBounds() {
 		return bounds;
+	}
+	
+	public float getHappiness() {
+		return happiness;
 	}
 	
 }

@@ -6,23 +6,30 @@ import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.math.Vector2;
+import com.raymondlusida.birthdaygirl.BirthdayGirl;
 import com.raymondlusida.birthdaygirl.controller.GirlController;
+import com.raymondlusida.birthdaygirl.model.Gift;
 import com.raymondlusida.birthdaygirl.model.World;
 import com.raymondlusida.birthdaygirl.renderer.WorldRenderer;
 
 public class GameScreen implements Screen, InputProcessor {
 
+	private BirthdayGirl game;
 	private World world;
 	private WorldRenderer renderer;
 	private GirlController controller;
 	
 	private float ippuX;
 	private float ippuY;
+		
+	public GameScreen(BirthdayGirl game) {
+		this.game = game;
+	}
 	
 	@Override
 	public void show() {
 		world = new World();
-		renderer = new WorldRenderer(world, true);
+		renderer = new WorldRenderer(world, false);
 		controller = new GirlController(world);
 		Gdx.input.setInputProcessor(this);
 	}
@@ -32,14 +39,20 @@ public class GameScreen implements Screen, InputProcessor {
 		Gdx.gl.glClearColor(1f, 1f, 1f, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		
-		controller.update(delta);
-		renderer.render();
+		if(! world.isOver()) {
+			controller.update(delta);
+			renderer.render();
+		} else {
+			game.resultScreen.setWorld(world);
+			game.setScreen(game.resultScreen);
+			
+		}
 	}
 
 	@Override
 	public void resize(int width, int height) {
-		ippuX = width / renderer.CAMERA_WIDTH;
-		ippuY = height / renderer.CAMERA_HEIGHT;
+		ippuX = width / WorldRenderer.CAMERA_WIDTH;
+		ippuY = height / WorldRenderer.CAMERA_HEIGHT;
 	}
 
 	@Override
@@ -90,22 +103,38 @@ public class GameScreen implements Screen, InputProcessor {
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
 		float x = (float)screenX / ippuX;
 		float y = World.ROOM_HEIGHT - (float)screenY / ippuY;
-		System.out.println(x + ", " + y);
-		System.out.println("Girl: " + world.getGirl().getPosition());
-		controller.setGoal(new Vector2(x, y));
+		
+		if(y < 0) {
+			Gift holdOption = renderer.touchOption(new Vector2(x, y));
+			if(holdOption != null)
+				holdOption.setPosition(new Vector2(x, y));
+			renderer.setHoldOption(holdOption);
+		}
+		
 		return true;
 	}
 
 	@Override
 	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-		// TODO Auto-generated method stub
-		return false;
+		float x = (float)screenX / ippuX;
+		float y = World.ROOM_HEIGHT - (float)screenY / ippuY;
+		
+		if(renderer.getHoldOption() != null && y > 0  && y < World.ROOM_HEIGHT && x > 0 && x < World.ROOM_WIDTH) {
+			renderer.moveHoldOption(new Vector2(x, y));
+			controller.addGift(renderer.getHoldOption().copy());
+		}
+		
+		renderer.setHoldOption(null);
+		
+		return true;
 	}
 
 	@Override
 	public boolean touchDragged(int screenX, int screenY, int pointer) {
-		// TODO Auto-generated method stub
-		return false;
+		float x = (float)screenX / ippuX;
+		float y = World.ROOM_HEIGHT - (float)screenY / ippuY;
+		renderer.moveHoldOption(new Vector2(x, y));
+		return true;
 	}
 
 	@Override

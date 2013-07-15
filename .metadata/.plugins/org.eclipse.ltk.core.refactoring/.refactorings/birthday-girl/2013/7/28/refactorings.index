@@ -15,3 +15,5 @@
 1373437545666	Rename field 'room'
 1373437555207	Rename field 'room'
 1373437558415	Rename local variable 'room'
+1373524828116	Rename method 'getOptionByCoordinate'
+1373532351591	Rename method 'pointToOptionGift'

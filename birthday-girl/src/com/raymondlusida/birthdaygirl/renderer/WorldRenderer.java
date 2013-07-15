@@ -1,18 +1,27 @@
 package com.raymondlusida.birthdaygirl.renderer;
 
-import java.util.Set;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
+import com.raymondlusida.birthdaygirl.model.Flower;
+import com.raymondlusida.birthdaygirl.model.Food;
 import com.raymondlusida.birthdaygirl.model.Gift;
 import com.raymondlusida.birthdaygirl.model.Girl;
+import com.raymondlusida.birthdaygirl.model.Plush;
 import com.raymondlusida.birthdaygirl.model.World;
 
 public class WorldRenderer {
@@ -20,15 +29,23 @@ public class WorldRenderer {
 	public static final float CAMERA_WIDTH = 9f;
 	public static final float CAMERA_HEIGHT = 16f;
 	
-	private World room;
+	private World world;
 	private OrthographicCamera cam;
+	
+	private Gift holdOption;
 
 	/** debug rendering **/
-	ShapeRenderer debugRenderer = new ShapeRenderer();
+	private ShapeRenderer debugRenderer = new ShapeRenderer();
 
 	/** Textures **/
 	private Texture girlTexture;
-	private Texture giftTexture;
+	private Texture foodTexture;
+	private Texture flowerTexture;
+	private Texture plushTexture;
+	
+	private BitmapFont font;
+	
+	private Map<Gift, Vector2> optionPositions;
 	
 	private SpriteBatch spriteBatch;
 	private boolean debug = false;
@@ -36,8 +53,10 @@ public class WorldRenderer {
 	public float ppuX; //pixels per unit on X axis
 	public float ppuY; // pixels per unit on Y axis
 	
-	public WorldRenderer(World room, boolean debug) {
-		this.room = room;
+	public WorldRenderer(World world, boolean debug) {
+		this.world = world;
+		this.holdOption = null;
+		this.optionPositions = new HashMap<Gift, Vector2>();
 		
 		this.cam = new OrthographicCamera(CAMERA_WIDTH, CAMERA_HEIGHT);
 		this.cam.position.set(CAMERA_WIDTH / 2f, CAMERA_HEIGHT / 2f, 0);
@@ -45,6 +64,8 @@ public class WorldRenderer {
 		
 		this.ppuX = Gdx.graphics.getWidth() / CAMERA_WIDTH;
 		this.ppuY = Gdx.graphics.getHeight() / CAMERA_HEIGHT;
+		
+		this.font = new BitmapFont();
 		
 		this.debug = debug;
 		
@@ -54,35 +75,89 @@ public class WorldRenderer {
 	
 	private void loadTextures() {
 		girlTexture = new Texture(Gdx.files.internal("images/girl.png"));
-		giftTexture = girlTexture;
+		foodTexture = new Texture(Gdx.files.internal("images/food.png"));
+		flowerTexture = new Texture(Gdx.files.internal("images/flower.png"));
+		plushTexture = new Texture(Gdx.files.internal("images/plush.png"));
 	}
 
 	public void render() {
 		spriteBatch.begin();
 		drawOptions();
+		drawPlacedGifts();
 		drawGirl();
+		drawHoldOption();
+		
+		CharSequence moneySpent = Integer.toString(world.getMoneySpent());
+		font.draw(spriteBatch, moneySpent, (CAMERA_WIDTH - 2) * ppuX, (CAMERA_HEIGHT - 1) * ppuY);
+		
+		CharSequence happiness = Float.toString(world.getGirl().getHappiness());
+		font.draw(spriteBatch, happiness, (CAMERA_WIDTH - 2) * ppuX, (CAMERA_HEIGHT - 2) * ppuY);
+
+		CharSequence timePassed = Float.toString(world.getTimePassed());
+		font.draw(spriteBatch, timePassed, 0 * ppuX, (CAMERA_HEIGHT - 1) * ppuY);
+		
 		spriteBatch.end();
 		if(debug)
 			drawDebug();
 	}
+	
+	private void drawPlacedGifts() {
+		List<Gift> placedGifts = world.getPlacedGifts();
+		for(Gift placedGift : placedGifts) {
+			spriteBatch.draw(	
+					getGiftTexture(placedGift), 
+					(placedGift.getPosition().x - Gift.WIDTH / 2) * ppuX,
+					(placedGift.getPosition().y - Gift.HEIGHT / 2 + World.MENU_HEIGHT) * ppuY, 
+					Gift.WIDTH * ppuX,
+					Gift.HEIGHT * ppuY
+			);
+		}
+	}
+
+	private void drawHoldOption() {
+		if(holdOption != null) {
+			spriteBatch.draw(	
+					getGiftTexture(holdOption), 
+					(holdOption.getPosition().x - Gift.WIDTH / 2) * ppuX,
+					(holdOption.getPosition().y - Gift.HEIGHT / 2 + World.MENU_HEIGHT) * ppuY, 
+					Gift.WIDTH * ppuX,
+					Gift.HEIGHT * ppuY
+			);
+		}
+	}
 
 	private void drawOptions() {
-		Set<Gift> optionGifts = room.getOptionGifts();
+		Collection<Gift> optionGifts = world.getOptionGifts();
 		int giftCounter = 0;
 		for(Gift optionGift : optionGifts) {
+			float xPos = giftCounter * Gift.WIDTH;
+			float yPos = 0 - Gift.HEIGHT;
 			spriteBatch.draw(	
-					giftTexture, 
-					giftCounter * Gift.WIDTH * ppuX,
+					getGiftTexture(optionGift), 
+					xPos * ppuX,
 					0 * ppuY, 
 					Gift.WIDTH * ppuX,
 					Gift.HEIGHT * ppuY
 			);
+			optionPositions.put(optionGift, new Vector2(xPos, yPos));
 			giftCounter++;
 		}
 	}
 	
+	public Gift touchOption(Vector2 point) {
+		for(Entry<Gift, Vector2> entry : optionPositions.entrySet()) {
+			Gift optionGift = entry.getKey();
+			Vector2 optionPos = entry.getValue();
+			boolean checkX = point.x > optionPos.x && point.x < optionPos.x + Gift.WIDTH;
+			boolean checkY = point.y > optionPos.y && point.y < optionPos.y + Gift.HEIGHT;
+			if(checkX && checkY)
+				return optionGift;
+		}
+		return null;
+	}
+	
 	private void drawGirl() {
-		Girl girl = room.getGirl();
+		Girl girl = world.getGirl();
 		Sprite girlSprite = new Sprite(girlTexture);
 		switch(girl.getDirection()) {
 		case RIGHT:
@@ -118,7 +193,7 @@ public class WorldRenderer {
 		}
 		
 		// render Bob
-		Girl girl = room.getGirl();
+		Girl girl = world.getGirl();
 		Rectangle rect = girl.getBounds();
 
 		float x1 = girl.getPosition().x - Girl.WIDTH / 2;
@@ -126,5 +201,32 @@ public class WorldRenderer {
 		debugRenderer.setColor(new Color(0, 1, 0, 1));
 		debugRenderer.rect(x1, y1, rect.width, rect.height);
 		debugRenderer.end();
+	}
+	
+	public Gift getHoldOption() {
+		return holdOption;
+	}
+	
+	public void setHoldOption(Gift holdOption) {
+		this.holdOption = holdOption;
+	}
+	
+	public void moveHoldOption(Vector2 newPosition) {
+		if(holdOption == null)
+			return;
+		
+		holdOption.setPosition(newPosition);
+	}
+	
+	private Texture getGiftTexture(Gift gift) {
+		if(gift instanceof Food) {
+			return foodTexture;
+		} else if(gift instanceof Flower){
+			return flowerTexture;
+		} else if(gift instanceof Plush) {
+			return plushTexture;
+		} else {
+			return null;
+		}
 	}
 }
