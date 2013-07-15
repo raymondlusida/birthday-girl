@@ -1,0 +1,11 @@
+package com.raymondlusida.birthdaygirl.model;
+
+import com.badlogic.gdx.math.Vector2;
+
+public abstract class Gift {
+
+	public static final float WIDTH = 3f;
+	public static final float HEIGHT = 3f;
+	
+	public abstract Vector2 getPosition();
+}

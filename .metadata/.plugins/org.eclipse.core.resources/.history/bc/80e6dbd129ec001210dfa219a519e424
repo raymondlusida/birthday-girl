@@ -1,0 +1,9 @@
+package com.raymondlusida.birthdaygirl.model;
+
+public class Plush extends Gift {
+
+	@Override
+	public String toString() {
+		return "Plush";
+	}
+}

@@ -1,0 +1,18 @@
+package com.raymondlusida.birthdaygirl;
+
+import com.badlogic.gdx.Game;
+import com.raymondlusida.birthdaygirl.screen.GameScreen;
+import com.raymondlusida.birthdaygirl.screen.MenuScreen;
+
+public class BirthdayGirl extends Game {
+
+	public GameScreen gameScreen;
+	public MenuScreen menuScreen;
+	
+	@Override
+	public void create() {
+		menuScreen = new MenuScreen();
+		gameScreen = new GameScreen(this);
+		setScreen(gameScreen);
+	}
+}

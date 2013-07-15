@@ -1,0 +1,29 @@
+package com.raymondlusida.birthdaygirl.renderer;
+
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.raymondlusida.birthdaygirl.model.World;
+
+public class MenuRenderer {
+
+	private SpriteBatch spriteBatch;
+	private BitmapFont font;
+	
+	public MenuRenderer() {
+		spriteBatch = new SpriteBatch();
+		this.font = new BitmapFont();
+	}
+	
+	public void render() {
+		spriteBatch.begin();
+		
+		CharSequence moneySpent = "You've spent $" + Integer.toString(world.getMoneySpent());
+		font.draw(spriteBatch, moneySpent, 50, 50);
+		
+		CharSequence avgHappiness = "Happiness is " + Float.toString(world.getGirl().getHappiness());
+		font.draw(spriteBatch, avgHappiness, 50, 30);
+		
+		spriteBatch.end();
+	}
+	
+}

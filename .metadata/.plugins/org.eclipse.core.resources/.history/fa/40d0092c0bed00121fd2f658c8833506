@@ -1,0 +1,97 @@
+package com.raymondlusida.birthdaygirl.model;
+
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
+
+public class Girl {
+
+	public enum Direction {
+		UP, DOWN, LEFT, RIGHT
+	}
+	
+	public static final float HEIGHT = 3f;
+	public static final float WIDTH = 3f;
+	public static final float SPEED = 4f;
+	
+	private static final int SADNESS_SPEED = 3;
+	private static final float SADNESS_INTERVAL = 1.2f;
+	
+	private Vector2 position;
+	private Vector2 velocity;
+	private Rectangle bounds;
+	private Direction direction;
+	
+	private int happiness;
+	private float accumulatedDelta;
+	
+	public Girl(Vector2 position) {
+		this.position = position;
+		this.velocity = new Vector2(0, 0);
+		this.bounds = new Rectangle();
+		this.bounds.height = HEIGHT;
+		this.bounds.width = WIDTH;
+		this.direction = Direction.LEFT;
+		this.happiness = 100;
+		this.accumulatedDelta = 0;
+	}
+
+	public void update(float delta) {
+		position.add(velocity.cpy().mul(delta));
+		
+		accumulatedDelta += delta;
+		if(accumulatedDelta >= SADNESS_INTERVAL) {
+			happiness = Math.max(happiness - SADNESS_SPEED, 0);
+			accumulatedDelta = 0;
+		}
+	}
+	
+	public void move(Direction direction) {
+		this.direction = direction;
+		switch(direction) {
+		case DOWN:
+			velocity.x = 0;
+			velocity.y = - SPEED;
+			break;
+		case LEFT:
+			velocity.x = - SPEED;
+			velocity.y = 0;
+			break;
+		case RIGHT:
+			velocity.x = SPEED;
+			velocity.y = 0;
+			break;
+		case UP:
+			velocity.x = 0;
+			velocity.y = SPEED;
+			break;
+		}
+	}
+	
+	public void stop() {
+		velocity.x = 0;
+		velocity.y = 0;
+	}
+	
+	public void receiveGift(Gift gift) {
+		happiness = Math.min(happiness + gift.getValue(), 100);
+	}
+	
+	/** GETTERS AND SETTERS **/
+	
+	public Direction getDirection() {
+		return direction;
+	}
+	
+	public Vector2 getPosition() {
+		return position;
+	}
+	
+	public Rectangle getBounds() {
+		return bounds;
+	}
+	
+	public float getHappiness() {
+		return happiness;
+	}
+	
+}

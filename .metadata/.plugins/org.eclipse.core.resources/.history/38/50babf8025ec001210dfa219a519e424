@@ -1,0 +1,140 @@
+package com.raymondlusida.birthdaygirl.screen;
+
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.math.Vector2;
+import com.raymondlusida.birthdaygirl.controller.GirlController;
+import com.raymondlusida.birthdaygirl.model.Gift;
+import com.raymondlusida.birthdaygirl.model.World;
+import com.raymondlusida.birthdaygirl.renderer.WorldRenderer;
+
+public class GameScreen implements Screen, InputProcessor {
+
+	private World world;
+	private WorldRenderer renderer;
+	private GirlController controller;
+	
+	private float ippuX;
+	private float ippuY;
+	
+	private Gift holdOption = null;
+	
+	@Override
+	public void show() {
+		world = new World();
+		renderer = new WorldRenderer(world, true);
+		controller = new GirlController(world);
+		Gdx.input.setInputProcessor(this);
+	}
+	
+	@Override
+	public void render(float delta) {
+		Gdx.gl.glClearColor(1f, 1f, 1f, 1);
+		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		
+		controller.update(delta);
+		renderer.render();
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		ippuX = width / WorldRenderer.CAMERA_WIDTH;
+		ippuY = height / WorldRenderer.CAMERA_HEIGHT;
+	}
+
+	@Override
+	public void hide() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pause() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void resume() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/** Input Processor Methods **/
+	
+	@Override
+	public boolean keyDown(int keycode) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean keyUp(int keycode) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean keyTyped(char character) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+		float x = (float)screenX / ippuX;
+		float y = (float)screenY / ippuY;
+		
+		System.out.println("y="+y);
+		if(y < World.ROOM_HEIGHT) {
+			y = World.ROOM_HEIGHT - y;
+			controller.setGoal(new Vector2(x, y));
+		} else {
+			y = World.ROOM_HEIGHT + World.MENU_HEIGHT - y;
+			holdOption = renderer.touchOption(new Vector2(x, y));
+			System.out.println("touched " + holdOption);
+		}
+		
+		return true;
+	}
+
+	@Override
+	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+		System.out.println("release " + holdOption);
+		holdOption = null;
+		return true;
+	}
+
+	@Override
+	public boolean touchDragged(int screenX, int screenY, int pointer) {
+		float x = (float)screenX / ippuX;
+		float y = (float)screenY / ippuY;
+		
+		y = World.ROOM_HEIGHT - y;
+		System.out.println("moving " + holdOption + "to " + x + ", " + y);
+		
+		return true;
+	}
+
+	@Override
+	public boolean mouseMoved(int screenX, int screenY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean scrolled(int amount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

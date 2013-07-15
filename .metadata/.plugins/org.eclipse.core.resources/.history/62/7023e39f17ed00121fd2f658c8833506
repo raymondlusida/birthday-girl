@@ -1,0 +1,14 @@
+package com.raymondlusida.birthdaygirl.renderer;
+
+import com.raymondlusida.birthdaygirl.model.World;
+
+public class ResultRenderer {
+
+	private World world;
+	
+	public ResultRenderer(World world) {
+		this.world = world;
+	}
+	
+	
+}

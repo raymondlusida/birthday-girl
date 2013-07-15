@@ -1,0 +1,59 @@
+package com.raymondlusida.birthdaygirl.screen;
+
+import com.badlogic.gdx.Screen;
+import com.raymondlusida.birthdaygirl.BirthdayGirl;
+import com.raymondlusida.birthdaygirl.model.World;
+
+public class ResultScreen implements Screen {
+
+	private BirthdayGirl game;
+	private World world;
+	
+	public ResultScreen(BirthdayGirl game, World world) {
+		this.game = game;
+		this.world = world;
+	}
+	
+	@Override
+	public void render(float delta) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void hide() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pause() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void resume() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

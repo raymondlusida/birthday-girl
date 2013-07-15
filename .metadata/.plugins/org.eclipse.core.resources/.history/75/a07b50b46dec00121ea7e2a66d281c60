@@ -1,0 +1,16 @@
+package com.raymondlusida.birthdaygirl.model;
+
+public class Plush extends Gift {
+
+	@Override
+	public String toString() {
+		return "Plush";
+	}
+	
+	@Override
+	public Gift copy() {
+		Gift copy = new Flower();
+		copy.setPosition(this.getPosition());
+		return copy;
+	}
+}

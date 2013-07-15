@@ -1,0 +1,21 @@
+package com.raymondlusida.birthdaygirl.model;
+
+public class Food extends Gift {
+
+	@Override
+	public String toString() {
+		return "Food";
+	}
+	
+	@Override
+	public Gift copy() {
+		Gift copy = new Food();
+		copy.setPosition(this.getPosition());
+		return copy;
+	}
+
+	@Override
+	public float getPrice() {
+		return 7f;
+	}
+}

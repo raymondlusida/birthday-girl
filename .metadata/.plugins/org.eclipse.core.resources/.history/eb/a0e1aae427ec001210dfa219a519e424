@@ -1,0 +1,62 @@
+package com.raymondlusida.birthdaygirl.controller;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import com.badlogic.gdx.math.Vector2;
+import com.raymondlusida.birthdaygirl.model.Gift;
+import com.raymondlusida.birthdaygirl.model.Girl;
+import com.raymondlusida.birthdaygirl.model.Girl.Direction;
+import com.raymondlusida.birthdaygirl.model.World;
+
+public class GirlController {
+
+	private World world;
+	private Girl girl;
+	private List<Gift> placedGifts;
+	
+	private Vector2 goal;
+	
+	public GirlController(World world) {
+		this.world = world;
+		this.girl = world.getGirl();
+		this.goal = new Vector2(girl.getPosition().x, girl.getPosition().y);
+		
+		this.placedGifts = new LinkedList<Gift>();
+	}
+	
+	public void update(float delta) {
+		moveGirlToGoal();
+		girl.update(delta);
+	}
+	
+	public void moveGirlToGoal() {
+		float deltaX = goal.x - girl.getPosition().x;
+		float deltaY = goal.y - girl.getPosition().y;
+		if(Math.abs(deltaX) > 0.2) {
+			if(deltaX > 0)
+				girl.move(Direction.RIGHT);
+			else
+				girl.move(Direction.LEFT);
+		} else if(Math.abs(deltaY) > 0.2) {
+			if(deltaY > 0)
+				girl.move(Direction.UP);
+			else
+				girl.move(Direction.DOWN);
+		} else {
+			girl.stop();
+		}
+	}
+	
+	public void setGoal(Vector2 goal) {
+		this.goal = goal;
+	}
+
+	public void addGift(Gift gift) {
+		placedGifts.add(gift);
+	}
+	
+	public void removeGift(Gift gift) {
+		placedGifts.remove(gift);
+	}
+}

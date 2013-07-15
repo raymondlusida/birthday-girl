@@ -1,0 +1,22 @@
+package com.raymondlusida.birthdaygirl.renderer;
+
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.raymondlusida.birthdaygirl.model.World;
+
+public class ResultRenderer {
+
+	private World world;
+	
+	private SpriteBatch spriteBatch;
+	
+	public ResultRenderer(World world) {
+		this.world = world;
+		spriteBatch = new SpriteBatch();
+	}
+	
+	public void render() {
+		spriteBatch.begin();
+		
+		spriteBatch.end();
+	}
+}

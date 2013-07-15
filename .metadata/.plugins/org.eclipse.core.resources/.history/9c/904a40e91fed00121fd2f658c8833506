@@ -1,0 +1,24 @@
+package com.raymondlusida.birthdaygirl.renderer;
+
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+public class MenuRenderer {
+
+	private SpriteBatch spriteBatch;
+	
+	public MenuRenderer() {
+		spriteBatch = new SpriteBatch();
+	}
+	
+	private void loadTexture() {
+		
+	}
+	
+	public void render() {
+		spriteBatch.begin();
+		
+		spriteBatch.end();
+	}
+	
+}
